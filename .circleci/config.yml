@@ -43,10 +43,10 @@ workflows:
       - test:
           requires:
             - build 
-      - integration:
+      - zap_baseline:
           requires:
             - test
       - prod:
           type: approval
           requires:
-            - integration
+            - zap_baseline
